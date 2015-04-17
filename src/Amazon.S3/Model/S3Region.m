@@ -61,6 +61,16 @@
     return west2;
 }
 
++(S3Region *)USEast1
+{
+    static S3Region *east1 = nil;
+    
+    if (east1 == nil) {
+        east1 = [[S3Region alloc] initWithStringValue:kS3RegionUSEast1];
+    }
+    return east1;
+}
+
 +(S3Region *)EUIreland
 {
     static S3Region *eu = nil;
@@ -79,6 +89,16 @@
         euwest1 = [[S3Region alloc] initWithStringValue:kS3RegionEUWest1];
     }
     return euwest1;
+}
+
++(S3Region *)EUCentral1
+{
+    static S3Region *eucentral1 = nil;
+    
+    if (eucentral1 == nil) {
+        eucentral1 = [[S3Region alloc] initWithStringValue:kS3RegionEUCentral1];
+    }
+    return eucentral1;
 }
 
 +(S3Region *)APSingapore
