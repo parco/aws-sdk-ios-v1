@@ -23,7 +23,9 @@
 
 #define kS3RegionUSWest1         @"us-west-1"
 #define kS3RegionUSWest2         @"us-west-2"
+#define kS3RegionUSEast1         @"us-east-1"
 #define kS3RegionEUWest1         @"eu-west-1"
+#define kS3RegionEUCentral1      @"eu-central-1"
 #define kS3RegionEU              @"EU"
 #define kS3RegionAPSoutheast1    @"ap-southeast-1"
 #define kS3RegionAPSoutheast2    @"ap-southeast-2"
@@ -54,7 +56,7 @@
 -(id)initWithStringValue:(NSString *)value;
 
 /**
- * The US Standard Amazon S3 Region. This region
+ * The US Standard (N. Virginia) Amazon S3 Region. This region
  * uses Amazon S3 servers located in the United
  * States.
  * <p>
@@ -99,6 +101,18 @@
 +(S3Region *)USWest2;
 
 /**
+ * The US East (N. Virginia) Region. This region uses Amazon S3 servers located
+ * in N. Virginia.
+ * <p>
+ * When using buckets in this region, optionally set the client
+ * endpoint to <code>s3.amazonaws.com</code> on all requests to these buckets
+ * to reduce any latency experienced after the first hour of
+ * creating a bucket in this region.
+ * </p>
+ */
++(S3Region *)USEast1;
+
+/**
  * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
  * in Ireland.  Deprecated in favor of <code>EUWest1</code>.
  * <p>
@@ -119,6 +133,18 @@
  * </p>
  */
 +(S3Region *)EUWest1;
+
+/**
+ * The EU (Frankfurt) Amazon S3 Region. This region uses Amazon S3 servers located
+ * in Frankfurt.
+ * <p>
+ * In Amazon S3, the EU (Frankfurt) Region provides read-after-write
+ * consistency for PUTS of new objects in Amazon S3 buckets and eventual
+ * consistency for overwrite PUTS and DELETES.
+ * when set endpoint to <code>s3-eu-central-1.amazonaws.com</code>
+ * </p>
+ */
++(S3Region *)EUCentral1;
 
 /**
  * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
